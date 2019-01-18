@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SafariServices
 
 class ViewController: UIViewController {
 
@@ -15,6 +16,11 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
     }
 
-
+    @IBAction func openPageTapped() {
+        guard let url = URL(string: "https://www.daddycoding.com") else { return }
+        let site = SFSafariViewController(url: url)
+        present(site, animated: true)
+    }
+    
 }
 
